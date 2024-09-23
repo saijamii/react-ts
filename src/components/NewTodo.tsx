@@ -4,6 +4,8 @@ const NewTodo: React.FC = () => {
   const todoInputRef = useRef<HTMLInputElement>(null);
   const onFinish = (event: React.FormEvent) => {
     event.preventDefault();
+    const enteredText = todoInputRef.current?.value;
+    if (enteredText?.trim().length === 0) return;
   };
 
   return (
